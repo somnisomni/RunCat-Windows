@@ -150,11 +150,19 @@ namespace RunCat
                     Checked = counterType.Equals("time"),
                     Tag = "time"
                 },
+                new ToolStripMenuItem("¦¦ Old way.\n    Calculates busy time of processors.")
+                {
+                    Enabled = false,
+                },
                 new ToolStripMenuItem("Processor Utilization", null, SetCounterType)
                 {
                     Checked = counterType.Equals("utility"),
                     Tag = "utility"
-                }
+                },
+                new ToolStripMenuItem("¦¦ Provides the same value as Task Manager on Windows 8+.\n    Calculates actual performance of processors.")
+                {
+                    Enabled = false,
+                },
             });
 
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip(new Container());
