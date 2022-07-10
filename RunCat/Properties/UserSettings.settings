@@ -11,5 +11,8 @@
     <Setting Name="Speed" Type="System.String" Scope="User">
       <Value Profile="(Default)">default</Value>
     </Setting>
+    <Setting Name="CounterType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">utility</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

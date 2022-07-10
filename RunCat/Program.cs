@@ -53,6 +53,7 @@ namespace RunCat
         private readonly ToolStripMenuItem themeMenu;
         private readonly ToolStripMenuItem startupMenu;
         private readonly ToolStripMenuItem runnerSpeedLimit;
+        private readonly ToolStripMenuItem counterTypeMenu;
         private readonly NotifyIcon notifyIcon;
         private string runner = "";
         private int current = 0;
@@ -61,6 +62,7 @@ namespace RunCat
         private string systemTheme = "";
         private string manualTheme = UserSettings.Default.Theme;
         private string speed = UserSettings.Default.Speed;
+        private string counterType = UserSettings.Default.CounterType;
         private Icon[] icons;
         private readonly Timer animateTimer = new();
         private readonly Timer cpuTimer = new();
@@ -141,6 +143,20 @@ namespace RunCat
                 }
             });
 
+            counterTypeMenu = new ToolStripMenuItem("Processor Counter Type", null, new ToolStripMenuItem[]
+            {
+                new ToolStripMenuItem("Processor Time", null, SetCounterType)
+                {
+                    Checked = counterType.Equals("time"),
+                    Tag = "time"
+                },
+                new ToolStripMenuItem("Processor Utilization", null, SetCounterType)
+                {
+                    Checked = counterType.Equals("utility"),
+                    Tag = "utility"
+                }
+            });
+
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip(new Container());
             contextMenuStrip.Items.AddRange(new ToolStripItem[]
             {
@@ -148,6 +164,7 @@ namespace RunCat
                 themeMenu,
                 startupMenu,
                 runnerSpeedLimit,
+                counterTypeMenu,
                 new ToolStripMenuItem("Exit", null, Exit)
             });
 
@@ -173,6 +190,7 @@ namespace RunCat
             UserSettings.Default.Runner = runner;
             UserSettings.Default.Theme = manualTheme;
             UserSettings.Default.Speed = speed;
+            UserSettings.Default.CounterType = counterType;
             UserSettings.Default.Save();
         }
 
@@ -268,6 +286,23 @@ namespace RunCat
             UpdateCheckedState(item, runnerSpeedLimit);
             speed = item.Text.ToLower();
             SetSpeed();
+        }
+
+        private void SetCounterType(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            UpdateCheckedState(item, counterTypeMenu);
+            counterType = ((string) item.Tag).ToLower();
+
+            if(counterType.Equals("time")) {
+                cpuUsage.CategoryName = "Processor";
+                cpuUsage.CounterName = "% Processor Time";
+                cpuUsage.NextValue();
+            } else if(counterType.Equals("utility")) {
+                cpuUsage.CategoryName = "Processor Information";
+                cpuUsage.CounterName = "% Processor Utility";
+                cpuUsage.NextValue();
+            }
         }
 
         private void UpdateThemeIcons()
