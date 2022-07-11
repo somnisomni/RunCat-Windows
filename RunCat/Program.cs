@@ -403,7 +403,7 @@ namespace RunCat
 
         private void CPUTick()
         {
-            interval = cpuUsage.NextValue();
+            interval = Math.Min(100.0f, cpuUsage.NextValue());
             notifyIcon.Text = $"CPU: {interval:f1}%";
             interval = 200.0f / (float)Math.Max(1.0f, Math.Min(20.0f, interval / 5.0f));
             _ = interval;
