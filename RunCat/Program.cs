@@ -173,6 +173,8 @@ namespace RunCat
                 startupMenu,
                 runnerSpeedLimit,
                 counterTypeMenu,
+                new ToolStripSeparator(),
+                new ToolStripMenuItem($"{Application.ProductName} v{Application.ProductVersion}", null) { Enabled = false },
                 new ToolStripMenuItem("Exit", null, Exit)
             });
 
