@@ -6,12 +6,12 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>appIcon.ico</ApplicationIcon>
     <StartupObject>RunCat.Program</StartupObject>
-    <Version>1.11.0</Version>
-    <Authors>Takuto Nakamura</Authors>
+    <Version>2.0.0-somni</Version>
+    <Authors>Takuto Nakamura, somni</Authors>
     <Description>A cute running cat animation on your windows taskbar.</Description>
-    <Copyright>© 2022 Takuto Nakamura</Copyright>
+    <Copyright>© 2022 Takuto Nakamura, somni</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/Kyome22/RunCat_for_windows</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/somnisomni/RunCat-Windows</PackageProjectUrl>
     <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
     <Platforms>x64;ARM64</Platforms>
     <IsPublishable>True</IsPublishable>
