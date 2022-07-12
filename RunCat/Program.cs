@@ -1,4 +1,5 @@
-// Copyright 2020 Takuto Nakamura
+// Copyright 2020-2022 Takuto Nakamura
+// Copyright 2022 somni
 // 
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -81,7 +82,7 @@ namespace RunCat
             cpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
             _ = cpuUsage.NextValue(); // discards first return value
 
-            runnerMenu = new ToolStripMenuItem("Runner", null, new ToolStripMenuItem[]
+            runnerMenu = new ToolStripMenuItem(Strings.Strings.Runner_Title, null, new ToolStripMenuItem[]
             {
                 new ToolStripMenuItem("Cat", null, SetRunner)
                 {
@@ -97,7 +98,7 @@ namespace RunCat
                 }
             });
 
-            themeMenu = new ToolStripMenuItem("Theme", null, new ToolStripMenuItem[]
+            themeMenu = new ToolStripMenuItem(Strings.Strings.Theme_Title, null, new ToolStripMenuItem[]
             {
                 new ToolStripMenuItem("Default", null, SetThemeIcons)
                 {
@@ -113,13 +114,13 @@ namespace RunCat
                 }
             });
 
-            startupMenu = new ToolStripMenuItem("Startup", null, SetStartup);
+            startupMenu = new ToolStripMenuItem(Strings.Strings.Startup_Title, null, SetStartup);
             if (IsStartupEnabled())
             {
                 startupMenu.Checked = true;
             }
 
-            runnerSpeedLimit = new ToolStripMenuItem("Runner Speed Limit", null, new ToolStripMenuItem[]
+            runnerSpeedLimit = new ToolStripMenuItem(Strings.Strings.SpeedLimit_Title, null, new ToolStripMenuItem[]
             {
                 new ToolStripMenuItem("Default", null, SetSpeedLimit)
                 {
@@ -143,23 +144,23 @@ namespace RunCat
                 }
             });
 
-            counterTypeMenu = new ToolStripMenuItem("Processor Counter Type", null, new ToolStripMenuItem[]
+            counterTypeMenu = new ToolStripMenuItem(Strings.Strings.CounterType_Title, null, new ToolStripMenuItem[]
             {
-                new ToolStripMenuItem("Processor Time", null, SetCounterType)
+                new ToolStripMenuItem(Strings.Strings.CounterType_Time_Title, null, SetCounterType)
                 {
                     Checked = counterType.Equals("time"),
                     Tag = "time"
                 },
-                new ToolStripMenuItem("¦¦ Old way.\n    Calculates busy time of processors.")
+                new ToolStripMenuItem($"¦¦ {Strings.Strings.CounterType_Time_Description}")
                 {
                     Enabled = false,
                 },
-                new ToolStripMenuItem("Processor Utilization", null, SetCounterType)
+                new ToolStripMenuItem(Strings.Strings.CounterType_Util_Title, null, SetCounterType)
                 {
                     Checked = counterType.Equals("utility"),
                     Tag = "utility"
                 },
-                new ToolStripMenuItem("¦¦ Provides the same value as Task Manager on Windows 8+.\n    Calculates actual performance of processors.")
+                new ToolStripMenuItem($"¦¦ {Strings.Strings.CounterType_Util_Description}")
                 {
                     Enabled = false,
                 },
@@ -175,7 +176,7 @@ namespace RunCat
                 counterTypeMenu,
                 new ToolStripSeparator(),
                 new ToolStripMenuItem($"{Application.ProductName} v{Application.ProductVersion}", null) { Enabled = false },
-                new ToolStripMenuItem("Exit", null, Exit)
+                new ToolStripMenuItem(Strings.Strings.Exit_Title, null, Exit)
             });
 
             notifyIcon = new NotifyIcon()
