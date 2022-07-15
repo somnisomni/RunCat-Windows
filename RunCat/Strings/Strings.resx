@@ -137,6 +137,16 @@ Calculates actual performance of processors.</value>
   <data name="Exit_Title" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="Message_AlreadyRunning_Description" xml:space="preserve">
+    <value>{0} is already running. Only one instance at a time allowed.
+
+The application will exit now.</value>
+    <comment>{0}: The application name.</comment>
+  </data>
+  <data name="Message_AlreadyRunning_Title" xml:space="preserve">
+    <value>{0} is already running</value>
+    <comment>{0}: The application name.</comment>
+  </data>
   <data name="Runner_Item_Cat_Title" xml:space="preserve">
     <value>Cat</value>
   </data>

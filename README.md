@@ -11,11 +11,11 @@
 
 # Tags
 
-`C#` `.NET Core 3.1` `Visual Studio` `RunCat`
+`C#` `.NET 6` `Visual Studio` `RunCat`
 
 # Demo
 
-![Demo](RunCat/resources/runcat_demo.gif)
+![Demo](docs/runcat_demo.gif)
 
 **You only have to run the RunCat.exe.**
 

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunCat", "RunCat\RunCat.csproj", "{10064461-1376-41CF-B6DA-A67B71BB2AC9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunCat-UnitTest", "RunCat-UnitTest\RunCat-UnitTest.csproj", "{BC15FF57-D833-4094-86E7-E1CBB72A2702}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -21,6 +23,14 @@ Global
 		{10064461-1376-41CF-B6DA-A67B71BB2AC9}.Release|ARM64.Build.0 = Release|ARM64
 		{10064461-1376-41CF-B6DA-A67B71BB2AC9}.Release|x64.ActiveCfg = Release|x64
 		{10064461-1376-41CF-B6DA-A67B71BB2AC9}.Release|x64.Build.0 = Release|x64
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Release|ARM64.Build.0 = Release|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC15FF57-D833-4094-86E7-E1CBB72A2702}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
