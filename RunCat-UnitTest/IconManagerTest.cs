@@ -6,12 +6,6 @@ using static RunCat.IconManager;
 namespace RunCat_UnitTest {
     [TestClass]
     public class IconManagerTest {
-        readonly IconManager iconManager;
-
-        public IconManagerTest() {
-            iconManager = new IconManager();
-        }
-
         public static IEnumerable<object[]> IconManagerTestData() {
             string[] availableIconNames = { "Cat", "Horse", "Parrot" };
             IconTheme[] availableIconThemes = { IconTheme.Light, IconTheme.Dark };
@@ -28,7 +22,7 @@ namespace RunCat_UnitTest {
 
         [TestMethod]
         public void GetSpecificIconResourceNames_Simple() {
-            object target = iconManager.GetSpecificIconResourceNames("Cat");
+            object target = GetSpecificIconResourceNames("Cat");
             Assert.IsNotNull(target);
             Assert.IsInstanceOfType(target, typeof(ReadOnlyCollection<string>));
 
@@ -42,7 +36,7 @@ namespace RunCat_UnitTest {
         [DataTestMethod]
         [DynamicData(nameof(IconManagerTestData), DynamicDataSourceType.Method)]
         public void GetSpecificIconResourceNames_Advanced(string iconName, IconTheme theme) {
-            object target = iconManager.GetSpecificIconResourceNames(iconName, theme);
+            object target = GetSpecificIconResourceNames(iconName, theme);
             Assert.IsNotNull(target);
             Assert.IsInstanceOfType(target, typeof(ReadOnlyCollection<string>));
 
@@ -60,7 +54,7 @@ namespace RunCat_UnitTest {
 
         [TestMethod]
         public void GetSpecificIconResourceName_Simple() {
-            object target = iconManager.GetSpecificIconResourceName("Cat", IconTheme.Light, 2);
+            object target = GetSpecificIconResourceName("Cat", IconTheme.Light, 2);
             Assert.IsNotNull(target);
             Assert.IsInstanceOfType(target, typeof(string));
 
@@ -77,7 +71,7 @@ namespace RunCat_UnitTest {
 
         [TestMethod]
         public void GetSpecificIcons_Simple() {
-            object target = iconManager.GetSpecificIcons("Cat");
+            object target = GetSpecificIcons("Cat");
             Assert.IsNotNull(target);
             Assert.IsInstanceOfType(target, typeof(ReadOnlyCollection<IconInfo>));
 
@@ -95,7 +89,7 @@ namespace RunCat_UnitTest {
         [DataTestMethod]
         [DynamicData(nameof(IconManagerTestData), DynamicDataSourceType.Method)]
         public void GetSpecificIcons_Advanced(string iconName, IconTheme theme) {
-            object target = iconManager.GetSpecificIcons(iconName, theme);
+            object target = GetSpecificIcons(iconName, theme);
             Assert.IsNotNull(target);
             Assert.IsInstanceOfType(target, typeof(ReadOnlyCollection<IconInfo>));
 
@@ -113,7 +107,7 @@ namespace RunCat_UnitTest {
 
         [TestMethod]
         public void GetSpecificIcon_Simple() {
-            object target = iconManager.GetSpecificIcon("Cat", IconTheme.Dark, 3);
+            object target = GetSpecificIcon("Cat", IconTheme.Dark, 3);
             Assert.IsNotNull(target);
             Assert.IsInstanceOfType(target, typeof(IconInfo));
 

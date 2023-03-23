@@ -30,7 +30,7 @@ namespace RunCat {
             Application.ApplicationExit += OnApplicationExit;
 
             // Start application context if there's all good
-            Application.Run(new NewRunCatApplicationContext());
+            Application.Run(new RunCatApplicationContext());
         }
 
         private static void OnApplicationExit(object sender, EventArgs e) {
@@ -41,8 +41,8 @@ namespace RunCat {
         }
     }
 
-    internal class NewRunCatApplicationContext : ApplicationContext {
-        public NewRunCatApplicationContext() {
+    internal class RunCatApplicationContext : ApplicationContext {
+        public RunCatApplicationContext() {
             // TODO
         }
     }
