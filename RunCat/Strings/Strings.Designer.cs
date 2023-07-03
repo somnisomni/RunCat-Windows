@@ -117,6 +117,26 @@ namespace RunCat.Strings {
         }
         
         /// <summary>
+        ///   {0} is already running. Only one instance at a time allowed.
+        ///
+        ///The application will exit now.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Message_AlreadyRunning_Description {
+            get {
+                return ResourceManager.GetString("Message_AlreadyRunning_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0} is already running과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Message_AlreadyRunning_Title {
+            get {
+                return ResourceManager.GetString("Message_AlreadyRunning_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cat과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string Runner_Item_Cat_Title {
